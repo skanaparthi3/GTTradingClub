@@ -1,0 +1,46 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.10'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://github.com/spring-projects/spring-framework"
+    }
+    maven {
+        url "https://mvnrepository.com/artifact/org.projectlombok/lombok"
+    }
+    maven {
+        url "https://spring.io/projects/spring-boot"
+    }
+    maven {
+        url "https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core"
+    }
+}
+
+dependencies {
+    implementation 'org.projectlombok:lombok:1.18.22'
+    implementation 'xyz.icanfly.websocket:websocketClient-spring-boot-starter:1.3'
+    implementation 'org.springframework:spring-websocket:6.0.6'
+    implementation 'org.springframework:spring-messaging:6.0.6'
+    implementation 'org.springframework.boot:spring-boot-starter-websocket:3.0.4'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.14.1'
+    implementation 'org.openjfx:javafx-controls:19'
+    implementation (group: 'org.openjfx', name: 'javafx', version: '11', ext: 'pom')
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+javafx {
+    version = "17"
+    modules = [ 'javafx.controls' ]
+}
+
+test {
+    useJUnitPlatform()
+}
